@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockPhone Argentina | Importaciones y Tecnología</title>
+<meta name="description" content="RockPhone Argentina - Importaciones directas de tecnología desde USA, China y España. iPhone, AirPods, accesorios con garantía. Envíos a todo el país.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --red: #e11d48;
+  --red-dark: #9f1239;
+  --red-glow: rgba(225,29,72,0.25);
+  --bg: #080c14;
+  --surface: #111827;
+  --surface2: #1a2234;
+  --border: #1f2d44;
+  --text: #f1f5f9;
+  --muted: #64748b;
+  --green: #25D366;
+  --green-dark: #128c7e;
+  --gold: #f59e0b;
+  --blue: #3b82f6;
+  --apple-silver: #8e9ba8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(225,29,72,0.3); }
+  50% { box-shadow: 0 0 40px rgba(225,29,72,0.6); }
+}
+@keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── NAV ─── */
+nav {
+  background: rgba(8, 12, 20, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  animation: fadeInUp 0.5s ease;
+}
+.nav-logo { height: 52px; border-radius: 50%; border: 2px solid var(--red); object-fit: cover; }
+.nav-brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: var(--red); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: filter 0.2s, transform 0.2s;
+}
+.nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,29,72,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(225,29,72,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #080c14 0%, #0d1525 100%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(225,29,72,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225,29,72,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; animation: fadeInUp 0.8s ease; }
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(225,29,72,0.15);
+  border: 1px solid rgba(225,29,72,0.3);
+  color: #fb7185;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.hero h1 span { color: var(--red); }
+.hero-sub {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--red);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  animation: glow 2s infinite;
+}
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px var(--red-glow); }
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+.btn-outline:hover { border-color: var(--red); color: var(--red); }
+.hero-stats {
+  position: relative; z-index: 1;
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+.stat-item { text-align: center; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--red); line-height: 1; }
+.stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* ─── VIDEO SECTION ─── */
+.video-section {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.video-card video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 9/16;
+  max-height: 600px;
+  object-fit: cover;
+}
+.video-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--red);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* ─── SECTION TITLES ─── */
+.section-header { text-align: center; padding: 4rem 2rem 2rem; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(225,29,72,0.12);
+  border: 1px solid rgba(225,29,72,0.25);
+  color: #fb7185;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.section-sub { color: var(--muted); margin-top: 0.75rem; font-size: 1rem; }
+
+/* ─── PRODUCT GRID ─── */
+.product-grid {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.product-card:hover { transform: translateY(-6px); border-color: var(--red); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.product-card.featured {
+  border-color: var(--red);
+  grid-column: span 2;
+}
+
+/* ─── CARRUSEL ─── */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #000;
+  overflow: hidden;
+}
+.product-card.featured .carousel { height: 380px; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+.carousel-slide img, .carousel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  font-size: 0.8rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-nav:hover { background: var(--red); transform: translateY(-50%) scale(1.1); }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  border: none;
+}
+.carousel-dot.active { background: var(--red); transform: scale(1.3); }
+.carousel-dot:hover { background: rgba(255,255,255,0.7); }
+.carousel-counter {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  z-index: 20;
+  letter-spacing: 1px;
+}
+.media-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+.badge-red { background: var(--red); color: white; }
+.badge-black { background: #000; color: white; border: 1px solid #333; }
+.badge-green { background: var(--green); color: white; }
+.badge-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+.badge-apple { background: linear-gradient(135deg, #1c1c1e, #3a3a3c); color: white; border: 1px solid rgba(255,255,255,0.15); }
+.badge-silver { background: linear-gradient(135deg, #c0c7d0, #8e9ba8); color: #1c1c1e; font-weight: 900; }
+
+.product-body { padding: 1.4rem; flex-grow: 1; display: flex; flex-direction: column; }
+.product-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+.product-price { font-size: 2rem; font-weight: 900; color: white; margin-bottom: 1rem; }
+.product-price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+.product-price .old-price {
+  text-decoration: line-through;
+  color: #475569;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+.product-price .save-badge {
+  background: var(--red);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.product-desc { font-size: 0.9rem; color: #94a3b8; margin-bottom: 1.2rem; line-height: 1.5; }
+.product-specs { list-style: none; margin-bottom: 1.4rem; flex-grow: 1; }
+.product-specs li {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.product-specs li:last-child { border-bottom: none; }
+.product-specs i { color: var(--red); width: 16px; text-align: center; }
+.btn-buy {
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: filter 0.2s, transform 0.2s;
+}
+.btn-buy:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.btn-consult {
+  background: var(--red);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: filter 0.2s;
+}
+.btn-consult:hover { filter: brightness(1.1); }
+
+/* ─── APPLE ORIGINALS SECTION ─── */
+.apple-section {
+  background: linear-gradient(180deg, var(--bg) 0%, #0a1020 50%, var(--bg) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.apple-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(142, 155, 168, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.apple-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(142, 155, 168, 0.1);
+  border: 1px solid rgba(142, 155, 168, 0.2);
+  color: #c0c7d0;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.apple-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+.apple-card {
+  background: #0e1624;
+  border: 1px solid rgba(142,155,168,0.15);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.apple-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+.apple-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(142,155,168,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(142,155,168,0.1);
+}
+.apple-card.combo-card {
+  border-color: rgba(245,158,11,0.3);
+  grid-column: span 2;
+}
+.apple-card.combo-card:hover {
+  border-color: rgba(245,158,11,0.5);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(245,158,11,0.08);
+}
+.apple-img-wrap {
+  width: 100%;
+  height: 260px;
+  background: #080c14;
+  overflow: hidden;
+  position: relative;
+}
+.apple-card.combo-card .apple-img-wrap { height: 340px; }
+.apple-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.apple-card:hover .apple-img-wrap img { transform: scale(1.04); }
+.apple-img-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.apple-body { padding: 1.4rem; flex-grow: 1; display: flex; flex-direction: column; }
+.apple-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--apple-silver);
+  margin-bottom: 0.3rem;
+}
+.apple-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 1px; margin-bottom: 0.75rem; line-height: 1; }
+.apple-price { font-size: 2rem; font-weight: 900; color: white; margin-bottom: 1.1rem; }
+.apple-price span { font-size: 1rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
+.apple-specs { list-style: none; margin-bottom: 1.4rem; flex-grow: 1; }
+.apple-specs li {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.apple-specs li:last-child { border-bottom: none; }
+.apple-specs i { color: var(--apple-silver); width: 16px; text-align: center; font-size: 0.8rem; }
+.apple-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(142,155,168,0.2), transparent);
+  margin-bottom: 1.4rem;
+}
+
+/* ─── IMPORTACIÓN / ENCARGOS ─── */
+.encargos-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 0; }
+.encargos-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.encargo-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.encargo-card:hover { border-color: rgba(225,29,72,0.5); transform: translateY(-4px); }
+.encargo-media { width: 100%; height: 280px; overflow: hidden; background: #000; }
+.encargo-media img, .encargo-media video { width: 100%; height: 100%; object-fit: cover; }
+.encargo-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.encargo-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+.encargo-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; margin-bottom: 0.75rem; }
+.encargo-text { font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+.steps { list-style: none; margin-bottom: 1.5rem; }
+.steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+.step-num {
+  background: rgba(225,29,72,0.15);
+  color: var(--red);
+  border-radius: 50%;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── TRUST ─── */
+.trust-section { padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.trust-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.trust-card:hover { border-color: rgba(225,29,72,0.4); transform: translateY(-4px); }
+.trust-icon {
+  width: 56px; height: 56px;
+  background: rgba(225,29,72,0.12);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  color: var(--red);
+  margin: 0 auto 1rem;
+}
+.trust-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.trust-text { font-size: 0.87rem; color: var(--muted); line-height: 1.5; }
+
+/* ─── TESTIMONIOS ─── */
+.testimonials-section { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+.testimonial-card:hover { border-color: rgba(225,29,72,0.3); }
+.testimonial-stars { color: var(--gold); margin-bottom: 0.75rem; font-size: 0.9rem; }
+.testimonial-text { font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 10px; }
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.testimonial-name { font-weight: 700; font-size: 0.9rem; }
+.testimonial-verified { font-size: 0.75rem; color: var(--green); display: flex; align-items: center; gap: 4px; }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 4rem 1.5rem; max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: rgba(225,29,72,0.3); }
+.faq-question {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.faq-question i { transition: transform 0.3s; color: var(--red); }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.2rem;
+  max-height: 200px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.footer-logo { height: 70px; border-radius: 50%; border: 2px solid var(--red); margin-bottom: 1rem; object-fit: cover; }
+.footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; color: var(--red); margin-bottom: 0.5rem; }
+.footer-text { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+.footer-copy { margin-top: 2rem; font-size: 0.78rem; color: #374151; }
+
+/* ─── FLOATING BUTTONS ─── */
+.float-wa {
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  width: 58px; height: 58px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  z-index: 1000;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.2s;
+  animation: pulse 2s infinite;
+}
+.float-wa:hover { transform: scale(1.1); }
+
+/* ─── CHAT ─── */
+.chat-widget { position: fixed; bottom: 24px; right: 20px; z-index: 1000; }
+.chat-toggle {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: var(--red);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  box-shadow: 0 4px 20px var(--red-glow);
+  transition: transform 0.2s;
+  animation: glow 2s infinite;
+}
+.chat-toggle:hover { transform: scale(1.1); }
+.chat-box {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: none;
+  animation: slideUp 0.3s ease;
+}
+.chat-box.open { display: flex; flex-direction: column; }
+.chat-header {
+  background: var(--surface);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.chat-header-info { display: flex; align-items: center; gap: 10px; }
+.chat-avatar {
+  width: 40px; height: 40px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.chat-name { font-weight: 700; font-size: 0.9rem; }
+.chat-status { font-size: 0.75rem; color: var(--green); }
+.chat-close {
+  background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.chat-close:hover { color: white; }
+.chat-body {
+  padding: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.msg-bot {
+  background: #e2e8f0;
+  color: #1e293b;
+  padding: 10px 14px;
+  border-radius: 14px 14px 14px 4px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-size: 0.85rem;
+  max-width: 90%;
+  width: fit-content;
+}
+.msg-user {
+  background: var(--red);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 14px 14px 4px 14px;
+  margin: 8px 0 8px auto;
+  width: fit-content;
+  max-width: 90%;
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+.chat-footer {
+  padding: 0.8rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+.chat-btn {
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.chat-btn:hover { border-color: var(--red); background: #fff5f7; }
+.chat-btn-wa {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+.chat-btn-wa:hover { filter: brightness(1.05); background: var(--green); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .product-card.featured { grid-column: span 1; }
+  .apple-card.combo-card { grid-column: span 1; }
+  .encargos-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 2rem; }
+  nav { padding: 0.8rem 1rem; }
+  .nav-brand { display: none; }
+  .nav-links { display: none; }
+  .product-card.featured .carousel { height: 280px; }
+  .carousel { height: 240px; }
+  .apple-card.combo-card .apple-img-wrap { height: 260px; }
+}
+@media (max-width: 500px) {
+  .chat-box { width: 88vw; right: -10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="https://i.ibb.co/MkFjGwry/IMG-20260430-WA0002.jpg" alt="RockPhone Logo" class="nav-logo">
+    <span class="nav-brand">RockPhone</span>
+  </div>
+  <div class="nav-links">
+    <a href="#productos">Productos</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#encargos">Importaciones</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a href="https://wa.me/5491121720103" class="nav-cta">
+    <i class="fa-brands fa-whatsapp"></i> Contactar
+  </a>
+</nav>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/5491121720103" class="float-wa" title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <i class="fa-solid fa-circle" style="font-size:0.5rem;color:#22c55e;"></i>
+      Stock disponible · Envíos a toda Argentina
+    </div>
+    <h1>ROCK<span>PHONE</span><br>ARGENTINA</h1>
+    <p class="hero-sub">Importaciones directas de tecnología desde USA, China y España. Lo que el mercado busca, nosotros lo traemos.</p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn-primary"><i class="fa-solid fa-bolt"></i> Ver productos</a>
+      <a href="#encargos" class="btn-outline"><i class="fa-solid fa-plane"></i> Encargar del exterior</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Batería garantizada</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">48hs</div>
+      <div class="stat-label">Entrega express</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Países de origen</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO DESTACADO -->
+<div class="video-section animate-on-scroll">
+  <div class="video-card">
+    <span class="video-badge"><i class="fa-solid fa-fire"></i> Lo más buscado</span>
+    <video autoplay loop muted playsinline poster="https://i.ibb.co/Z6R3Q22H/Apple-i-Phone-13-Pro-i-Phone-13-Pro-Max-GEO-09142021-inline-jpg-slideshow-large-2x.jpg">
+      <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777489905/VID_20260429_161104_523_xduqyx.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- PRODUCTOS EN STOCK -->
+<div id="productos" class="section-header animate-on-scroll">
+  <div class="section-label"><i class="fa-solid fa-box"></i> Stock físico disponible</div>
+  <h2 class="section-title">Productos en stock</h2>
+  <p class="section-sub">Todos con garantía. Entrega inmediata en Buenos Aires y envíos a todo el país.</p>
+</div>
+
+<div class="product-grid">
+  <!-- iPhone 13 Pro Max --- FEATURED -->
+  <div class="product-card featured animate-on-scroll">
+    <div class="carousel" data-carousel="iphone13">
+      <span class="media-badge badge-red"><i class="fa-solid fa-battery-full"></i> 100% Batería</span>
+      <div class="carousel-counter">1 / 2</div>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/Z6R3Q22H/Apple-i-Phone-13-Pro-i-Phone-13-Pro-Max-GEO-09142021-inline-jpg-slideshow-large-2x.jpg" alt="iPhone 13 Pro Max - Vista frontal">
+        </div>
+        <div class="carousel-slide">
+          <video autoplay loop muted playsinline>
+            <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777489905/VID_20260429_161104_523_xduqyx.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <button class="carousel-nav carousel-prev" onclick="moveCarousel('iphone13', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-nav carousel-next" onclick="moveCarousel('iphone13', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('iphone13', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('iphone13', 1)"></button>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-title">iPhone 13 Pro Max</div>
+      <div class="product-price">$650.000 <span>ARS</span></div>
+      <ul class="product-specs">
+        <li><i class="fa-solid fa-battery-full"></i> Batería al 100% — como nuevo</li>
+        <li><i class="fa-solid fa-star"></i> Grado A+ — estado impecable</li>
+        <li><i class="fa-solid fa-camera"></i> Sistema de cámaras Pro con video 4K Cinematic</li>
+        <li><i class="fa-solid fa-mobile-screen"></i> Pantalla Super Retina XDR con ProMotion</li>
+        <li><i class="fa-solid fa-shield-halved"></i> Garantía incluida</li>
+      </ul>
+      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20iPhone%2013%20Pro%20Max" class="btn-buy">
+        <i class="fa-brands fa-whatsapp"></i> Comprar ahora
+      </a>
+    </div>
+  </div>
+
+  <!-- Combo Rocker Completo -->
+  <div class="product-card animate-on-scroll">
+    <div class="carousel" data-carousel="combo">
+      <span class="media-badge badge-gold">MEGA OFERTA 🔥</span>
+      <div class="carousel-counter">1 / 3</div>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/1tZMpv9y/IMG-20260429-WA0002.jpg" alt="Combo Rocker - Vista 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/rGGxZR1P/IMG-20260429-WA0005.jpg" alt="Combo Rocker - Vista 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/5WhKnZV3/IMG-20260429-WA0003.jpg" alt="Combo Rocker - Vista 3">
+        </div>
+      </div>
+      <button class="carousel-nav carousel-prev" onclick="moveCarousel('combo', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-nav carousel-next" onclick="moveCarousel('combo', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('combo', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('combo', 1)"></button>
+        <button class="carousel-dot" onclick="goToSlide('combo', 2)"></button>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-title">Combo Rocker Completo</div>
+      <div class="product-price">$54.990 <span>ARS</span></div>
+      <p class="product-desc">AirPods Pro 2 + Cabezal de carga 20W + Cable USB-C. Todo lo que necesitás en un solo pack al mejor precio.</p>
+      <ul class="product-specs">
+        <li><i class="fa-solid fa-headphones"></i> AirPods Pro 2 Premium</li>
+        <li><i class="fa-solid fa-plug"></i> Cargador 20W + Cable</li>
+        <li><i class="fa-solid fa-tag"></i> Ahorro combinado</li>
+      </ul>
+      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Combo%20Rocker%20Completo%20de%2054990" class="btn-buy">
+        <i class="fa-brands fa-whatsapp"></i> Pedir combo
+      </a>
+    </div>
+  </div>
+
+  <!-- AirPods Pro 2 -->
+  <div class="product-card animate-on-scroll">
+    <div class="carousel" data-carousel="airpods">
+      <span class="media-badge badge-green">PREMIUM</span>
+      <div class="carousel-counter">1 / 1</div>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/5WhKnZV3/IMG-20260429-WA0003.jpg" alt="AirPods Pro 2">
+        </div>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-title">AirPods Pro 2 Premium</div>
+      <div class="product-price">$29.990 <span>ARS</span></div>
+      <p class="product-desc">Calidad premium con sonido envolvente tipo 3D, modo transparencia realista y sensor táctil.</p>
+      <ul class="product-specs">
+        <li><i class="fa-solid fa-ear-listen"></i> Modo transparencia realista</li>
+        <li><i class="fa-solid fa-volume-high"></i> Bajos potentes + audio limpio</li>
+        <li><i class="fa-solid fa-fingerprint"></i> Sensor táctil (sube/baja volumen)</li>
+        <li><i class="fa-solid fa-microphone"></i> Micrófono HD para llamadas</li>
+        <li><i class="fa-solid fa-bluetooth"></i> Bluetooth 5.0/5.3 estable</li>
+        <li><i class="fa-solid fa-clock"></i> 4–6 hs de uso + carga extra con case</li>
+      </ul>
+      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20los%20AirPods%20Pro%202" class="btn-buy">
+        <i class="fa-brands fa-whatsapp"></i> Lo quiero
+      </a>
+    </div>
+  </div>
+
+  <!-- Cargador 20W + Cable -->
+  <div class="product-card animate-on-scroll">
+    <div class="carousel" data-carousel="cargador">
+      <span class="media-badge badge-black">CARGA RÁPIDA</span>
+      <div class="carousel-counter">1 / 2</div>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/pjDcvzhH/IMG-20260429-WA0006.jpg" alt="Cargador 20W - Vista 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://i.ibb.co/gbtw72jG/IMG-20260429-154213-046.jpg" alt="Cargador 20W - Vista 2">
+        </div>
+      </div>
+      <button class="carousel-nav carousel-prev" onclick="moveCarousel('cargador', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-nav carousel-next" onclick="moveCarousel('cargador', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="goToSlide('cargador', 0)"></button>
+        <button class="carousel-dot" onclick="goToSlide('cargador', 1)"></button>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-title">Cargador 20W + Cable</div>
+      <div class="product-price">$28.900 <span>ARS</span></div>
+      <p class="product-desc">Cable USB-C a C + Cargador 20W. Carga rápida, segura y súper duradera. Alternativa económica con la misma funcionalidad que el original Apple.</p>
+      <ul class="product-specs">
+        <li><i class="fa-solid fa-bolt"></i> Carga rápida 20W</li>
+        <li><i class="fa-solid fa-shield-halved"></i> Seguro y duradero</li>
+        <li><i class="fa-solid fa-mobile-screen-button"></i> Compatible con iPhone</li>
+      </ul>
+      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20cargador%20de%2020W" class="btn-buy">
+        <i class="fa-brands fa-whatsapp"></i> Comprar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ACCESORIOS APPLE ORIGINALES ─── -->
+<section id="accesorios" class="apple-section">
+  <div class="section-header animate-on-scroll" style="padding-bottom: 2rem; position: relative; z-index: 1;">
+    <div class="apple-section-label">
+      <i class="fa-brands fa-apple"></i> Accesorios originales Apple
+    </div>
+    <h2 class="section-title">100% Original Apple</h2>
+    <p class="section-sub">Cargá más rápido, cuidá tu batería y olvidate de los genéricos.</p>
+  </div>
+
+  <div class="apple-grid">
+
+    <!-- Cargador Apple Original 20W -->
+    <div class="apple-card animate-on-scroll">
+      <div class="apple-img-wrap">
+        <span class="apple-img-badge badge-apple"><i class="fa-brands fa-apple"></i> Original</span>
+        <img src="https://i.ibb.co/vxv5SxB6/IMG-20260505-WA0003.jpg" alt="Cargador Apple Original 20W">
+      </div>
+      <div class="apple-body">
+        <div class="apple-subtitle">Cabezal de carga</div>
+        <div class="apple-title">Cargador Apple 20W USB-C</div>
+        <div class="apple-price">$59.990 <span>ARS</span></div>
+        <div class="apple-divider"></div>
+        <ul class="apple-specs">
+          <li><i class="fa-brands fa-apple"></i> 100% Original Apple</li>
+          <li><i class="fa-solid fa-bolt"></i> Carga rápida — 20W USB-C</li>
+          <li><i class="fa-solid fa-battery-full"></i> Cuida la batería del iPhone</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Protección contra sobrecarga y calor</li>
+          <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
+          <li><i class="fa-solid fa-box"></i> Compacto y fácil de transportar</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Cargador%20Apple%20Original%2020W%20a%2059990" class="btn-buy">
+          <i class="fa-brands fa-whatsapp"></i> Quiero este cargador
+        </a>
+      </div>
+    </div>
+
+    <!-- Segundo producto (imagen sin descripción — consultá por WA) -->
+    <div class="apple-card animate-on-scroll">
+      <div class="apple-img-wrap">
+        <span class="apple-img-badge badge-silver">NUEVO</span>
+        <img src="https://i.ibb.co/zhsnXhVt/IMG-20260505-WA0002.jpg" alt="Accesorio Apple Original">
+      </div>
+      <div class="apple-body">
+        <div class="apple-subtitle">Accesorio Apple</div>
+        <div class="apple-title">Consultá disponibilidad</div>
+        <div class="apple-price" style="font-size:1.3rem; color: var(--apple-silver);">Precio a consultar</div>
+        <div class="apple-divider"></div>
+        <ul class="apple-specs">
+          <li><i class="fa-brands fa-apple"></i> Producto original Apple</li>
+          <li><i class="fa-solid fa-check"></i> Calidad garantizada</li>
+          <li><i class="fa-solid fa-truck-fast"></i> Stock disponible en Buenos Aires</li>
+          <li><i class="fa-solid fa-comments"></i> Consultanos por WhatsApp para más info</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20info%20sobre%20el%20accesorio%20Apple%20de%20la%20foto" class="btn-consult">
+          <i class="fa-brands fa-whatsapp"></i> Consultar precio
+        </a>
+      </div>
+    </div>
+
+    <!-- Cable Apple Original -->
+    <div class="apple-card animate-on-scroll">
+      <div class="apple-img-wrap">
+        <span class="apple-img-badge badge-apple"><i class="fa-brands fa-apple"></i> Original</span>
+        <img src="https://i.ibb.co/21BMKjGN/IMG-20260505-WA0001.jpg" alt="Cable Apple Original USB-C y Lightning">
+      </div>
+      <div class="apple-body">
+        <div class="apple-subtitle">Cable de carga</div>
+        <div class="apple-title">Cable Apple USB-C / Lightning</div>
+        <div class="apple-price">$49.990 <span>ARS</span></div>
+        <div class="apple-divider"></div>
+        <ul class="apple-specs">
+          <li><i class="fa-brands fa-apple"></i> 100% Original Apple</li>
+          <li><i class="fa-solid fa-bolt"></i> Carga rápida y estable</li>
+          <li><i class="fa-solid fa-link"></i> Conexión segura — no daña el equipo</li>
+          <li><i class="fa-solid fa-dumbbell"></i> Material resistente y duradero</li>
+          <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
+          <li><i class="fa-solid fa-arrows-left-right"></i> Disponible en Lightning o USB-C</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Cable%20Apple%20Original%20a%2049990" class="btn-buy">
+          <i class="fa-brands fa-whatsapp"></i> Quiero este cable
+        </a>
+      </div>
+    </div>
+
+    <!-- Combo Apple Original (Cabezal + Cable) — DESTACADO -->
+    <div class="apple-card combo-card animate-on-scroll">
+      <div class="apple-img-wrap">
+        <span class="apple-img-badge badge-gold">🔋 COMBO APPLE ⚡</span>
+        <img src="https://i.ibb.co/pBkYKLdF/IMG-20260505-WA0000.jpg" alt="Combo Apple Original Cabezal + Cable">
+      </div>
+      <div class="apple-body">
+        <div class="apple-subtitle">Pack completo · La mejor relación calidad-precio</div>
+        <div class="apple-title">Combo Apple Original — Cabezal 20W + Cable</div>
+        <div class="apple-price">$99.990 <span>ARS</span>
+          <span class="save-badge" style="background:var(--gold); color:#1c1c1e; font-size:0.75rem; padding:3px 10px; border-radius:6px; margin-left:10px; vertical-align:middle; font-weight:800;">AHORRÁS $9.980</span>
+        </div>
+        <div class="apple-divider"></div>
+        <ul class="apple-specs">
+          <li><i class="fa-brands fa-apple"></i> 100% Original Apple — cabezal y cable</li>
+          <li><i class="fa-solid fa-bolt"></i> Carga rápida y eficiente (20W)</li>
+          <li><i class="fa-solid fa-battery-full"></i> Protege la batería del iPhone</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Seguridad contra sobrecarga y calor</li>
+          <li><i class="fa-solid fa-dumbbell"></i> Cable resistente y duradero</li>
+          <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Combo%20Apple%20Original%20(Cabezal+Cable)%20a%2099990" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size:1rem;">
+          <i class="fa-brands fa-whatsapp"></i> Quiero el combo completo
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENCARGOS / IMPORTACIÓN -->
+<section class="encargos-section" id="encargos">
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-label"><i class="fa-solid fa-plane"></i> Importación por encargo</div>
+    <h2 class="section-title">Traemos lo que buscás</h2>
+    <p class="section-sub">USA 🇺🇸 · China 🇨🇳 · España 🇪🇸 — envío aéreo o marítimo a toda Argentina.</p>
+  </div>
+  <div class="encargos-grid">
+    <!-- iPhone 17 -->
+    <div class="encargo-card animate-on-scroll">
+      <div class="encargo-media">
+        <img src="https://i.ibb.co/twYtMvd8/img-6769.webp" alt="iPhone 17">
+      </div>
+      <div class="encargo-body">
+        <div class="encargo-label"><i class="fa-solid fa-tag"></i> Bajo encargo · Preventa</div>
+        <div class="encargo-title">iPhone 17</div>
+        <p class="encargo-text">Anticipate al futuro. Traemos las últimas novedades de Apple directo desde USA. Precio a confirmar según modelo y configuración.</p>
+        <a href="https://wa.me/5491121720103?text=Hola,%20info%20sobre%20encargos%20de%20iPhone%2017" class="btn-consult">
+          <i class="fa-brands fa-whatsapp"></i> Consultar preventa
+        </a>
+      </div>
+    </div>
+    <!-- Servicio de importación -->
+    <div class="encargo-card animate-on-scroll">
+      <div class="encargo-media">
+        <video autoplay loop muted playsinline style="background:#000;">
+          <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777490070/VID_20260429_161353_238_u0pqx0.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="encargo-body">
+        <div class="encargo-label"><i class="fa-solid fa-globe"></i> Agente de carga internacional</div>
+        <div class="encargo-title">Servicio de importación</div>
+        <p class="encargo-text">Elegís el producto de cualquier tienda del mundo. Nosotros nos encargamos de todo. Importamos iPhone y carga general por encargo.</p>
+        <ul class="steps">
+          <li><span class="step-num">1</span> Pasanos el link o describí el producto</li>
+          <li><span class="step-num">2</span> Te cotizamos el envío sin compromiso</li>
+          <li><span class="step-num">3</span> Lo traemos por aire o mar a Argentina</li>
+          <li><span class="step-num">4</span> Te lo entregamos sin trámites extras</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20cotizar%20una%20importacion" class="btn-consult">
+          <i class="fa-brands fa-whatsapp"></i> Cotizar importación
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO PROMOCIONAL -->
+<div class="section-header animate-on-scroll">
+  <div class="section-label"><i class="fa-solid fa-play"></i> Consejo del día</div>
+  <h2 class="section-title">Comprá inteligente</h2>
+</div>
+<div class="video-section animate-on-scroll" style="margin-bottom: 2rem;">
+  <div class="video-card">
+    <span class="video-badge" style="background: #3b82f6;"><i class="fa-solid fa-lightbulb"></i> Sabías que...</span>
+    <video controls poster="https://i.ibb.co/RpcprwFB/IMG-20260429-162253-289.jpg" style="aspect-ratio: 9/16; max-height: 600px;">
+      <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777490305/VID_20260429_161655_883_shzgim.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials-section animate-on-scroll">
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-label"><i class="fa-solid fa-comments"></i> Clientes satisfechos</div>
+    <h2 class="section-title">Lo que dicen de nosotros</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">"Excelente atención. El iPhone llegó impecable, batería al 100% como prometieron. Jonatan responde al toque por WhatsApp."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">M</div>
+        <div>
+          <div class="testimonial-name">Martín G.</div>
+          <div class="testimonial-verified"><i class="fa-solid fa-circle-check"></i> Compra verificada</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">"Me trajeron unos AirPods desde USA en 10 días. Todo perfecto, sin trámites de aduana. Super recomendable el servicio de importación."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">S</div>
+        <div>
+          <div class="testimonial-name">Sofía M.</div>
+          <div class="testimonial-verified"><i class="fa-solid fa-circle-check"></i> Compra verificada</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+      </div>
+      <p class="testimonial-text">"El combo de AirPods + cargador es un golazo. Calidad premium y el precio es imbatible. Entrega en 24hs en CABA."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">J</div>
+        <div>
+          <div class="testimonial-name">Jorge P.</div>
+          <div class="testimonial-verified"><i class="fa-solid fa-circle-check"></i> Compra verificada</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">"Compré el cargador Apple original y la diferencia con los genéricos es brutal. Carga rapidísimo y sin calentar el teléfono."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">L</div>
+        <div>
+          <div class="testimonial-name">Lucía R.</div>
+          <div class="testimonial-verified"><i class="fa-solid fa-circle-check"></i> Compra verificada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / POR QUÉ ELEGIRNOS -->
+<section>
+  <div class="section-header animate-on-scroll">
+    <div class="section-label"><i class="fa-solid fa-shield-halved"></i> Por qué elegirnos</div>
+    <h2 class="section-title">Comprás con confianza</h2>
+  </div>
+  <div class="trust-section" style="padding-top:0;">
+    <div class="trust-grid">
+      <div class="trust-card animate-on-scroll">
+        <div class="trust-icon"><i class="fa-solid fa-battery-full"></i></div>
+        <div class="trust-title">Batería verificada</div>
+        <p class="trust-text">Todos nuestros equipos usados vienen con diagnóstico de batería 100%. Sin excepciones.</p>
+      </div>
+      <div class="trust-card animate-on-scroll">
+        <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="trust-title">Entrega rápida</div>
+        <p class="trust-text">Stock físico en Buenos Aires. Coordinamos entrega o envío a todo el país en 24-48hs.</p>
+      </div>
+      <div class="trust-card animate-on-scroll">
+        <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="trust-title">Atención directa</div>
+        <p class="trust-text">Hablás con Jonatan directamente, sin bots. Respuesta en minutos por WhatsApp.</p>
+      </div>
+      <div class="trust-card animate-on-scroll">
+        <div class="trust-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="trust-title">Importación legal</div>
+        <p class="trust-text">Agente de carga habilitado. Aéreo y marítimo. Sin trámites extra para el comprador.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-label"><i class="fa-solid fa-circle-question"></i> Preguntas frecuentes</div>
+    <h2 class="section-title">Resolvemos tus dudas</h2>
+  </div>
+  <div class="faq-item animate-on-scroll">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      ¿Cuánto tarda el envío?
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Stock local: entregamos en 24-48hs en GBA. Importaciones desde USA: 7-15 días aéreo, 30-45 días marítimo.
+    </div>
+  </div>
+  <div class="faq-item animate-on-scroll">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      ¿Los productos tienen garantía?
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Sí, todos nuestros productos incluyen garantía. Los equipos usados tienen garantía de funcionamiento y batería verificada al 100%.
+    </div>
+  </div>
+  <div class="faq-item animate-on-scroll">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      ¿Los accesorios Apple son 100% originales?
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Sí. Los cargadores y cables Apple que vendemos son 100% originales. Vienen en su packaging original y tenés la garantía de calidad Apple.
+    </div>
+  </div>
+  <div class="faq-item animate-on-scroll">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      ¿Cómo encargo algo del exterior?
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Fácil: me pasás el link o describís el producto, te cotizo el envío (aéreo o marítimo), y lo traemos directo a Argentina. Sin trámites de tu parte.
+    </div>
+  </div>
+  <div class="faq-item animate-on-scroll">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      ¿Hacen envíos a todo el país?
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Sí, realizamos envíos a todo Argentina mediante correo privado o coordinamos punto de encuentro en Buenos Aires y GBA.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <img src="https://i.ibb.co/MkFjGwry/IMG-20260430-WA0002.jpg" alt="RockPhone Logo" class="footer-logo">
+  <div class="footer-brand">RockPhone Argentina</div>
+  <p class="footer-text">Importaciones directas de tecnología · Buenos Aires</p>
+  <div class="footer-links">
+    <a href="https://wa.me/5491121720103"><i class="fa-brands fa-whatsapp"></i> +54 9 11 2172-0103</a>
+    <a href="https://wa.me/5491121720103"><i class="fa-solid fa-envelope"></i> Escribinos</a>
+  </div>
+  <p class="footer-copy">© 2026 RockPhone Argentina. Todos los derechos reservados.</p>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar"><i class="fa-solid fa-guitar"></i></div>
+        <div>
+          <div class="chat-name">Jonatan · RockPhone</div>
+          <div class="chat-status">● En línea ahora</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="msg-bot">¡Hola! Soy Jonatan 🎸. ¿Buscás un equipo con batería al 100% o querés cotizar una importación?</div>
+    </div>
+    <div class="chat-footer">
+      <button class="chat-btn" onclick="ans('¿Tienen stock disponible?', '¡Sí! Tenemos iPhone 13 Pro Max con 100% de batería, AirPods Pro 2, accesorios Apple originales y combos listos para entrega inmediata en Buenos Aires.')">📦 ¿Tienen stock?</button>
+      <button class="chat-btn" onclick="ans('¿Los accesorios Apple son originales?', '¡100% originales! Cargadores 20W, cables Lightning y USB-C, y combos completos. Todo con caja original Apple.')">🍎 ¿Son originales?</button>
+      <button class="chat-btn" onclick="ans('¿Cómo encargo algo del exterior?', 'Fácil: me pasás el link o describís el producto, te cotizo el envío (aéreo o marítimo), y lo traemos directo a Argentina. Sin trámites de tu parte.')">✈️ ¿Cómo encargo del exterior?</button>
+      <button class="chat-btn" onclick="ans('¿Cuánto tarda el envío?', 'Stock local: entregamos en 24-48hs en GBA. Importaciones desde USA: 7-15 días aéreo, 30-45 días marítimo.')">🚚 ¿Cuánto tarda el envío?</button>
+      <button class="chat-btn chat-btn-wa" onclick="window.open('https://wa.me/5491121720103')">
+        <i class="fa-brands fa-whatsapp"></i> Hablar con Jonatan por WA
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()">
+    <i class="fa-solid fa-bolt" id="chatIcon"></i>
+  </button>
+</div>
+
+<script>
+  // ─── CARRUSEL ───
+  const carousels = {};
+
+  function initCarousel(name) {
+    const el = document.querySelector(`[data-carousel="${name}"]`);
+    if (!el) return;
+    const track = el.querySelector('.carousel-track');
+    const slides = el.querySelectorAll('.carousel-slide');
+    const dots = el.querySelectorAll('.carousel-dot');
+    const counter = el.querySelector('.carousel-counter');
+    const total = slides.length;
+
+    carousels[name] = { el, track, slides, dots, counter, current: 0, total };
+
+    if (total > 1) {
+      setInterval(() => moveCarousel(name, 1), 5000);
+    }
+  }
+
+  function updateCarousel(name) {
+    const c = carousels[name];
+    if (!c) return;
+    c.track.style.transform = `translateX(-${c.current * 100}%)`;
+    c.dots.forEach((dot, i) => dot.classList.toggle('active', i === c.current));
+    if (c.counter) c.counter.textContent = `${c.current + 1} / ${c.total}`;
+  }
+
+  function moveCarousel(name, direction) {
+    const c = carousels[name];
+    if (!c || c.total <= 1) return;
+    c.current = (c.current + direction + c.total) % c.total;
+    updateCarousel(name);
+  }
+
+  function goToSlide(name, index) {
+    const c = carousels[name];
+    if (!c) return;
+    c.current = index;
+    updateCarousel(name);
+  }
+
+  // ─── SCROLL ANIMATIONS ───
+  function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  // ─── FAQ ───
+  function toggleFaq(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  }
+
+  // ─── CHAT ───
+  function toggleChat() {
+    const box = document.getElementById('chatBox');
+    const icon = document.getElementById('chatIcon');
+    box.classList.toggle('open');
+    icon.className = box.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bolt';
+  }
+
+  function ans(q, a) {
+    const b = document.getElementById('chatBody');
+    b.innerHTML += `<div class="msg-user">${q}</div>`;
+    setTimeout(() => {
+      b.innerHTML += `<div class="msg-bot">${a}</div>`;
+      b.scrollTop = b.scrollHeight;
+    }, 400);
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    ['iphone13', 'combo', 'airpods', 'cargador'].forEach(initCarousel);
+    handleScrollAnimations();
+    window.addEventListener('scroll', handleScrollAnimations);
+  });
+</script>
+</body>
+</html>
