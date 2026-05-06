@@ -886,21 +886,142 @@ footer {
 }
 .chat-btn-wa:hover { filter: brightness(1.05); background: var(--green); }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
-  .product-card.featured { grid-column: span 1; }
-  .apple-card.combo-card { grid-column: span 1; }
-  .encargos-grid { grid-template-columns: 1fr; }
-  .hero-stats { gap: 2rem; }
-  nav { padding: 0.8rem 1rem; }
-  .nav-brand { display: none; }
-  .nav-links { display: none; }
-  .product-card.featured .carousel { height: 280px; }
-  .carousel { height: 240px; }
-  .apple-card.combo-card .apple-img-wrap { height: 260px; }
+/* ─── HAMBURGER MENU ─── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
 }
-@media (max-width: 500px) {
-  .chat-box { width: 88vw; right: -10px; }
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(8,12,20,0.97);
+  backdrop-filter: blur(20px);
+  z-index: 950;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.mobile-menu.open { display: flex; animation: fadeInUp 0.3s ease; }
+.mobile-menu a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--red); }
+.mobile-menu .menu-wa {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .encargos-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* Nav */
+  nav { padding: 0.8rem 1rem; }
+  .nav-brand { font-size: 1.3rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+
+  /* Hero */
+  .hero { padding: 3rem 1.2rem; min-height: 80vh; }
+  .hero-sub { font-size: 1rem; }
+  .hero-stats { gap: 1.5rem; margin-top: 3rem; }
+  .stat-num { font-size: 2rem; }
+
+  /* Products */
+  .product-card.featured { grid-column: span 1; }
+  .product-card.featured .carousel { height: 260px; }
+  .carousel { height: 240px; }
+  .product-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: 1rem; }
+
+  /* Apple section */
+  .apple-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: 1rem; }
+  .apple-card.combo-card { grid-column: span 1; }
+  .apple-card.combo-card .apple-img-wrap { height: 240px; }
+  .apple-img-wrap { height: 220px; }
+
+  /* Encargos */
+  .encargos-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+  .encargo-media { height: 220px; }
+
+  /* Trust */
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Video */
+  .video-section { padding: 0 1rem; }
+
+  /* Section headers */
+  .section-header { padding: 3rem 1rem 1.5rem; }
+  .section-title { font-size: clamp(2rem, 8vw, 3rem); }
+
+  /* Chat */
+  .chat-box { width: 90vw; right: -8px; }
+  .float-wa { bottom: 90px; left: 14px; width: 52px; height: 52px; font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  /* Hero */
+  .hero h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns a { width: 100%; justify-content: center; }
+  .hero-stats { gap: 1rem; }
+
+  /* Trust */
+  .trust-grid { grid-template-columns: 1fr; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Apple price */
+  .apple-price { font-size: 1.6rem; }
+  .product-price { font-size: 1.6rem; }
+
+  /* Section */
+  .section-header { padding: 2.5rem 1rem 1.2rem; }
+
+  /* Combo save badge wrapping */
+  .apple-price .save-badge { display: block; margin-left: 0; margin-top: 6px; width: fit-content; }
+}
+
+@media (max-width: 360px) {
+  .chat-box { width: 95vw; right: -4px; }
+  .hero h1 { font-size: 3rem; }
 }
 </style>
 </head>
@@ -922,7 +1043,22 @@ footer {
   <a href="https://wa.me/5491121720103" class="nav-cta">
     <i class="fa-brands fa-whatsapp"></i> Contactar
   </a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#productos" onclick="toggleMenu()">Productos</a>
+  <a href="#accesorios" onclick="toggleMenu()">Accesorios</a>
+  <a href="#encargos" onclick="toggleMenu()">Importaciones</a>
+  <a href="#faq" onclick="toggleMenu()">Preguntas</a>
+  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+  <a href="https://wa.me/5491121720103" class="menu-wa">
+    <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
+  </a>
+</div>
 
 <!-- FLOAT WA -->
 <a href="https://wa.me/5491121720103" class="float-wa" title="WhatsApp">
@@ -1011,7 +1147,7 @@ footer {
         <li><i class="fa-solid fa-mobile-screen"></i> Pantalla Super Retina XDR con ProMotion</li>
         <li><i class="fa-solid fa-shield-halved"></i> Garantía incluida</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20iPhone%2013%20Pro%20Max" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20el%20iPhone%2013%20Pro%20Max%20(%24650.000%20ARS).%20%C2%BFSigue%20disponible%3F" class="btn-buy">
         <i class="fa-brands fa-whatsapp"></i> Comprar ahora
       </a>
     </div>
@@ -1050,7 +1186,7 @@ footer {
         <li><i class="fa-solid fa-plug"></i> Cargador 20W + Cable</li>
         <li><i class="fa-solid fa-tag"></i> Ahorro combinado</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Combo%20Rocker%20Completo%20de%2054990" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Rocker%20Completo%20(AirPods%20Pro%202%20%2B%20Cargador%2020W%20%2B%20Cable)%20a%20%2454.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
         <i class="fa-brands fa-whatsapp"></i> Pedir combo
       </a>
     </div>
@@ -1079,7 +1215,7 @@ footer {
         <li><i class="fa-solid fa-bluetooth"></i> Bluetooth 5.0/5.3 estable</li>
         <li><i class="fa-solid fa-clock"></i> 4–6 hs de uso + carga extra con case</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20los%20AirPods%20Pro%202" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20los%20AirPods%20Pro%202%20Premium%20a%20%2429.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
         <i class="fa-brands fa-whatsapp"></i> Lo quiero
       </a>
     </div>
@@ -1114,7 +1250,7 @@ footer {
         <li><i class="fa-solid fa-shield-halved"></i> Seguro y duradero</li>
         <li><i class="fa-solid fa-mobile-screen-button"></i> Compatible con iPhone</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20cargador%20de%2020W" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%2020W%20%2B%20Cable%20USB-C%20a%20%2428.900%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
         <i class="fa-brands fa-whatsapp"></i> Comprar
       </a>
     </div>
@@ -1152,7 +1288,7 @@ footer {
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
           <li><i class="fa-solid fa-box"></i> Compacto y fácil de transportar</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Cargador%20Apple%20Original%2020W%20a%2059990" class="btn-buy">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%20Apple%20Original%2020W%20USB-C%20a%20%2459.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
           <i class="fa-brands fa-whatsapp"></i> Quiero este cargador
         </a>
       </div>
@@ -1175,7 +1311,7 @@ footer {
           <li><i class="fa-solid fa-truck-fast"></i> Stock disponible en Buenos Aires</li>
           <li><i class="fa-solid fa-comments"></i> Consultanos por WhatsApp para más info</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20info%20sobre%20el%20accesorio%20Apple%20de%20la%20foto" class="btn-consult">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Vi%20un%20accesorio%20Apple%20en%20su%20sitio%20y%20quiero%20saber%20el%20precio%20y%20disponibilidad." class="btn-consult">
           <i class="fa-brands fa-whatsapp"></i> Consultar precio
         </a>
       </div>
@@ -1200,7 +1336,7 @@ footer {
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
           <li><i class="fa-solid fa-arrows-left-right"></i> Disponible en Lightning o USB-C</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Cable%20Apple%20Original%20a%2049990" class="btn-buy">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cable%20Apple%20Original%20(Lightning%20o%20USB-C)%20a%20%2449.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
           <i class="fa-brands fa-whatsapp"></i> Quiero este cable
         </a>
       </div>
@@ -1227,7 +1363,7 @@ footer {
           <li><i class="fa-solid fa-dumbbell"></i> Cable resistente y duradero</li>
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20el%20Combo%20Apple%20Original%20(Cabezal+Cable)%20a%2099990" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size:1rem;">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Apple%20Original%20(Cabezal%2020W%20%2B%20Cable)%20a%20%2499.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size:1rem;">
           <i class="fa-brands fa-whatsapp"></i> Quiero el combo completo
         </a>
       </div>
@@ -1253,7 +1389,7 @@ footer {
         <div class="encargo-label"><i class="fa-solid fa-tag"></i> Bajo encargo · Preventa</div>
         <div class="encargo-title">iPhone 17</div>
         <p class="encargo-text">Anticipate al futuro. Traemos las últimas novedades de Apple directo desde USA. Precio a confirmar según modelo y configuración.</p>
-        <a href="https://wa.me/5491121720103?text=Hola,%20info%20sobre%20encargos%20de%20iPhone%2017" class="btn-consult">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20encargar%20un%20iPhone%2017%20desde%20USA.%20%C2%BFPueden%20darme%20info%20sobre%20modelos%20y%20precios%3F" class="btn-consult">
           <i class="fa-brands fa-whatsapp"></i> Consultar preventa
         </a>
       </div>
@@ -1275,7 +1411,7 @@ footer {
           <li><span class="step-num">3</span> Lo traemos por aire o mar a Argentina</li>
           <li><span class="step-num">4</span> Te lo entregamos sin trámites extras</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola,%20quiero%20cotizar%20una%20importacion" class="btn-consult">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20cotizar%20una%20importaci%C3%B3n%20desde%20el%20exterior.%20%C2%BFMe%20pueden%20asesorar%3F" class="btn-consult">
           <i class="fa-brands fa-whatsapp"></i> Cotizar importación
         </a>
       </div>
@@ -1563,6 +1699,15 @@ footer {
       b.innerHTML += `<div class="msg-bot">${a}</div>`;
       b.scrollTop = b.scrollHeight;
     }, 400);
+  }
+
+  // ─── MOBILE MENU ───
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
   }
 
   // Initialize
