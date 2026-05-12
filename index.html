@@ -886,7 +886,247 @@ footer {
 }
 .chat-btn-wa:hover { filter: brightness(1.05); background: var(--green); }
 
-/* ─── HAMBURGER MENU ─── */
+/* ─── iPHONE 17 HERO SECTION ─── */
+.iphone17-hero {
+  max-width: 1200px;
+  margin: 0 auto 0;
+  padding: 0 1.5rem 4rem;
+}
+.iphone17-card {
+  background: linear-gradient(135deg, #0a0f1e 0%, #0d1a2e 50%, #0a1220 100%);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  position: relative;
+}
+.iphone17-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(59,130,246,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.iphone17-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px 0 0 24px;
+}
+.iphone17-carousel-wrap .carousel-track { height: 100%; }
+.iphone17-carousel-wrap .carousel-slide { height: 520px; }
+.iphone17-carousel-wrap .carousel-slide img,
+.iphone17-carousel-wrap .carousel-slide video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.iphone17-body {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.iphone17-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.3);
+  color: #93c5fd;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+}
+.iphone17-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  letter-spacing: 2px;
+  line-height: 0.95;
+  margin-bottom: 0.5rem;
+}
+.iphone17-title span { color: #3b82f6; }
+.iphone17-sub {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  max-width: 380px;
+}
+.iphone17-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.iphone17-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+.iphone17-badge i { color: #3b82f6; font-size: 0.75rem; }
+.iphone17-price-row {
+  margin-bottom: 1.8rem;
+}
+.iphone17-price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(59,130,246,0.12);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 12px;
+  padding: 0.8rem 1.4rem;
+}
+.iphone17-price-tag span:first-child {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.iphone17-price-tag span:last-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: white;
+}
+.iphone17-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.btn-iphone17 {
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: filter 0.2s, transform 0.2s;
+  target: _blank;
+}
+.btn-iphone17:hover { filter: brightness(1.15); transform: translateY(-2px); }
+.btn-iphone17-outline {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-iphone17-outline:hover { border-color: #3b82f6; color: #3b82f6; }
+
+/* ─── iPHONES USADOS SECTION ─── */
+.usados-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 0;
+}
+.usados-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.usado-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.usado-card:hover { transform: translateY(-5px); border-color: rgba(225,29,72,0.4); }
+.usado-img {
+  width: 100%; height: 260px;
+  overflow: hidden; background: #000; position: relative;
+}
+.usado-img img, .usado-img video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.5s;
+}
+.usado-card:hover .usado-img img { transform: scale(1.04); }
+.usado-status-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+.badge-disponible { background: #22c55e; color: white; }
+.badge-encargo { background: var(--red); color: white; }
+.usado-body { padding: 1.4rem; flex-grow: 1; display: flex; flex-direction: column; }
+.usado-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.usado-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+.usado-consulta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fb7185;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.usado-specs { list-style: none; margin-bottom: 1.4rem; flex-grow: 1; }
+.usado-specs li {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.usado-specs li:last-child { border-bottom: none; }
+.usado-specs i { color: var(--red); width: 16px; text-align: center; }
+
+/* Responsive para secciones nuevas */
+@media (max-width: 900px) {
+  .iphone17-card { grid-template-columns: 1fr; }
+  .iphone17-carousel-wrap { border-radius: 24px 24px 0 0; }
+  .iphone17-carousel-wrap .carousel-slide { height: 340px; }
+  .iphone17-body { padding: 2rem 1.5rem; }
+}
+@media (max-width: 768px) {
+  .iphone17-hero { padding: 0 1rem 3rem; }
+  .iphone17-carousel-wrap .carousel-slide { height: 280px; }
+  .iphone17-title { font-size: 3rem; }
+  .iphone17-btns { flex-direction: column; }
+  .iphone17-btns a { justify-content: center; }
+  .usados-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+}
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -1034,13 +1274,14 @@ footer {
     <span class="nav-brand">RockPhone</span>
   </div>
   <div class="nav-links">
-    <a href="#productos">Productos</a>
+    <a href="#iphone17-section">iPhone 17</a>
+    <a href="#productos">iPhones Usados</a>
     <a href="#accesorios">Accesorios</a>
     <a href="#encargos">Importaciones</a>
     <a href="#faq">Preguntas</a>
     <a href="#contacto">Contacto</a>
   </div>
-  <a href="https://wa.me/5491121720103" class="nav-cta">
+  <a href="https://wa.me/5491121720103" class="nav-cta" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i> Contactar
   </a>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
@@ -1050,18 +1291,19 @@ footer {
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#productos" onclick="toggleMenu()">Productos</a>
+  <a href="#iphone17-section" onclick="toggleMenu()">iPhone 17</a>
+  <a href="#productos" onclick="toggleMenu()">iPhones Usados</a>
   <a href="#accesorios" onclick="toggleMenu()">Accesorios</a>
   <a href="#encargos" onclick="toggleMenu()">Importaciones</a>
   <a href="#faq" onclick="toggleMenu()">Preguntas</a>
   <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-  <a href="https://wa.me/5491121720103" class="menu-wa">
+  <a href="https://wa.me/5491121720103" class="menu-wa" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
   </a>
 </div>
 
 <!-- FLOAT WA -->
-<a href="https://wa.me/5491121720103" class="float-wa" title="WhatsApp">
+<a href="https://wa.me/5491121720103" class="float-wa" title="WhatsApp" target="_blank" rel="noopener noreferrer">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
@@ -1097,62 +1339,167 @@ footer {
   </div>
 </section>
 
-<!-- VIDEO DESTACADO -->
-<div class="video-section animate-on-scroll">
-  <div class="video-card">
-    <span class="video-badge"><i class="fa-solid fa-fire"></i> Lo más buscado</span>
-    <video autoplay loop muted playsinline poster="https://i.ibb.co/Z6R3Q22H/Apple-i-Phone-13-Pro-i-Phone-13-Pro-Max-GEO-09142021-inline-jpg-slideshow-large-2x.jpg">
-      <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777489905/VID_20260429_161104_523_xduqyx.mp4" type="video/mp4">
-    </video>
+<!-- ═══════════════════════════════════════════
+     iPHONE 17 — PRIMERA PLANA (HERO PRODUCTO)
+═══════════════════════════════════════════ -->
+<div class="section-header animate-on-scroll" id="iphone17-section" style="padding-bottom: 1.5rem;">
+  <div class="section-label" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.25);color:#93c5fd;">
+    <i class="fa-brands fa-apple"></i> Recién llegado · Lo más nuevo de Apple
+  </div>
+  <h2 class="section-title">iPhone <span style="color:#3b82f6;">17</span></h2>
+  <p class="section-sub">Directo desde USA. La última generación de Apple ya disponible por encargo.</p>
+</div>
+
+<div class="iphone17-hero animate-on-scroll">
+  <div class="iphone17-card">
+    <!-- Carrusel: foto + 3 videos -->
+    <div class="iphone17-carousel-wrap">
+      <div class="carousel" data-carousel="iphone17" style="height:100%;">
+        <span class="media-badge" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:white;top:14px;left:14px;">
+          <i class="fa-brands fa-apple"></i> iPhone 17
+        </span>
+        <div class="carousel-counter">1 / 4</div>
+        <div class="carousel-track" style="height:520px;">
+          <div class="carousel-slide">
+            <img src="https://i.ibb.co/jkkXX6q4/1000944073.jpg" alt="iPhone 17">
+          </div>
+          <div class="carousel-slide">
+            <video autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1778565812/VID-20260506-WA0004_1_y30egw.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-slide">
+            <video autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1778565882/VID-20260506-WA0005_cdzdkq.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-slide">
+            <video autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1778566000/VID-20260506-WA0003_l7egxi.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <button class="carousel-nav carousel-prev" onclick="moveCarousel('iphone17', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-nav carousel-next" onclick="moveCarousel('iphone17', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" onclick="goToSlide('iphone17', 0)"></button>
+          <button class="carousel-dot" onclick="goToSlide('iphone17', 1)"></button>
+          <button class="carousel-dot" onclick="goToSlide('iphone17', 2)"></button>
+          <button class="carousel-dot" onclick="goToSlide('iphone17', 3)"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="iphone17-body">
+      <div class="iphone17-label">
+        <i class="fa-solid fa-circle" style="font-size:0.4rem;color:#22c55e;"></i>
+        Disponible por encargo · Importación directa USA
+      </div>
+      <div class="iphone17-title">iPhone<br><span>17</span></div>
+      <p class="iphone17-sub">La última generación de Apple. Chip A19, cámara de 48 MP rediseñada y nueva pantalla OLED de 6.1". Lo traemos directo desde USA sin trámites.</p>
+      <div class="iphone17-badges">
+        <div class="iphone17-badge"><i class="fa-solid fa-microchip"></i> Chip A19 Bionic</div>
+        <div class="iphone17-badge"><i class="fa-solid fa-camera"></i> Cámara 48 MP</div>
+        <div class="iphone17-badge"><i class="fa-solid fa-mobile-screen"></i> OLED 6.1"</div>
+        <div class="iphone17-badge"><i class="fa-solid fa-plane"></i> Importado desde USA</div>
+        <div class="iphone17-badge"><i class="fa-solid fa-shield-halved"></i> Garantía incluida</div>
+        <div class="iphone17-badge"><i class="fa-brands fa-apple"></i> Sellado original</div>
+      </div>
+      <div class="iphone17-price-row">
+        <div class="iphone17-price-tag">
+          <span>Precio</span>
+          <span>A consultar · Según modelo</span>
+        </div>
+      </div>
+      <div class="iphone17-btns">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20encargar%20un%20iPhone%2017%20desde%20USA.%20%C2%BFPueden%20darme%20info%20sobre%20modelos%20y%20precios%3F" class="btn-iphone17" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Consultar / Encargar
+        </a>
+        <a href="#encargos" class="btn-iphone17-outline">
+          <i class="fa-solid fa-circle-info"></i> Cómo funciona
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- PRODUCTOS EN STOCK -->
-<div id="productos" class="section-header animate-on-scroll">
-  <div class="section-label"><i class="fa-solid fa-box"></i> Stock físico disponible</div>
-  <h2 class="section-title">Productos en stock</h2>
-  <p class="section-sub">Todos con garantía. Entrega inmediata en Buenos Aires y envíos a todo el país.</p>
+<!-- ═══════════════════════════════════════════
+     iPHONES USADOS
+═══════════════════════════════════════════ -->
+<section class="usados-section" id="productos">
+  <div class="section-header animate-on-scroll" style="padding-top: 0;">
+    <div class="section-label"><i class="fa-solid fa-rotate-left"></i> Equipos usados verificados</div>
+    <h2 class="section-title">iPhones Usados</h2>
+    <p class="section-sub">Batería verificada al 100%. Grado A+. Todos revisados antes de la entrega.</p>
+  </div>
+  <div class="usados-grid">
+
+    <!-- iPhone 13 Pro Max -->
+    <div class="usado-card animate-on-scroll">
+      <div class="usado-img">
+        <span class="usado-status-badge badge-disponible">✅ Disponible</span>
+        <div class="carousel" data-carousel="iphone13u" style="height:260px;">
+          <div class="carousel-track" style="height:260px;">
+            <div class="carousel-slide">
+              <img src="https://i.ibb.co/Z6R3Q22H/Apple-i-Phone-13-Pro-i-Phone-13-Pro-Max-GEO-09142021-inline-jpg-slideshow-large-2x.jpg" alt="iPhone 13 Pro Max">
+            </div>
+            <div class="carousel-slide">
+              <video autoplay loop muted playsinline>
+                <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777489905/VID_20260429_161104_523_xduqyx.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <button class="carousel-nav carousel-prev" onclick="moveCarousel('iphone13u', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-nav carousel-next" onclick="moveCarousel('iphone13u', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" onclick="goToSlide('iphone13u', 0)"></button>
+            <button class="carousel-dot" onclick="goToSlide('iphone13u', 1)"></button>
+          </div>
+        </div>
+      </div>
+      <div class="usado-body">
+        <div class="usado-category">iPhone · Usado</div>
+        <div class="usado-title">iPhone 13 Pro Max</div>
+        <div class="usado-consulta"><i class="fa-brands fa-whatsapp"></i> Consultá el precio por WhatsApp</div>
+        <ul class="usado-specs">
+          <li><i class="fa-solid fa-battery-full"></i> Batería al 100% — verificada</li>
+          <li><i class="fa-solid fa-star"></i> Grado A+ — estado impecable</li>
+          <li><i class="fa-solid fa-camera"></i> Cámaras Pro con video 4K Cinematic</li>
+          <li><i class="fa-solid fa-mobile-screen"></i> Pantalla Super Retina XDR con ProMotion</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Garantía incluida</li>
+        </ul>
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20el%20iPhone%2013%20Pro%20Max%20usado.%20%C2%BFCu%C3%A1l%20es%20el%20precio%20y%20sigue%20disponible%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Consultar precio
+        </a>
+      </div>
+    </div>
+
+    <!-- Placeholder: más iPhones usados -->
+    <div class="usado-card animate-on-scroll" style="justify-content:center;align-items:center;min-height:400px;border-style:dashed;opacity:0.6;">
+      <div style="text-align:center;padding:2rem;color:var(--muted);">
+        <i class="fa-solid fa-plus" style="font-size:2rem;margin-bottom:1rem;display:block;"></i>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;margin-bottom:0.5rem;color:var(--text);">Más equipos pronto</div>
+        <p style="font-size:0.88rem;line-height:1.5;margin-bottom:1.5rem;">Preguntá por otros modelos disponibles o por encargo.</p>
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20saber%20qu%C3%A9%20iPhones%20usados%20tienen%20disponibles." class="btn-consult" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;">
+          <i class="fa-brands fa-whatsapp"></i> Ver más modelos
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     OTROS PRODUCTOS EN STOCK
+═══════════════════════════════════════════ -->
+<div class="section-header animate-on-scroll">
+  <div class="section-label"><i class="fa-solid fa-box"></i> Stock disponible</div>
+  <h2 class="section-title">Accesorios y combos</h2>
+  <p class="section-sub">AirPods, cargadores y combos. Entrega inmediata en Buenos Aires.</p>
 </div>
 
 <div class="product-grid">
-  <!-- iPhone 13 Pro Max --- FEATURED -->
-  <div class="product-card featured animate-on-scroll">
-    <div class="carousel" data-carousel="iphone13">
-      <span class="media-badge badge-red"><i class="fa-solid fa-battery-full"></i> 100% Batería</span>
-      <div class="carousel-counter">1 / 2</div>
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="https://i.ibb.co/Z6R3Q22H/Apple-i-Phone-13-Pro-i-Phone-13-Pro-Max-GEO-09142021-inline-jpg-slideshow-large-2x.jpg" alt="iPhone 13 Pro Max - Vista frontal">
-        </div>
-        <div class="carousel-slide">
-          <video autoplay loop muted playsinline>
-            <source src="https://res.cloudinary.com/dpqm5srcu/video/upload/v1777489905/VID_20260429_161104_523_xduqyx.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <button class="carousel-nav carousel-prev" onclick="moveCarousel('iphone13', -1)"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="carousel-nav carousel-next" onclick="moveCarousel('iphone13', 1)"><i class="fa-solid fa-chevron-right"></i></button>
-      <div class="carousel-dots">
-        <button class="carousel-dot active" onclick="goToSlide('iphone13', 0)"></button>
-        <button class="carousel-dot" onclick="goToSlide('iphone13', 1)"></button>
-      </div>
-    </div>
-    <div class="product-body">
-      <div class="product-title">iPhone 13 Pro Max</div>
-      <div class="product-price">$650.000 <span>ARS</span></div>
-      <ul class="product-specs">
-        <li><i class="fa-solid fa-battery-full"></i> Batería al 100% — como nuevo</li>
-        <li><i class="fa-solid fa-star"></i> Grado A+ — estado impecable</li>
-        <li><i class="fa-solid fa-camera"></i> Sistema de cámaras Pro con video 4K Cinematic</li>
-        <li><i class="fa-solid fa-mobile-screen"></i> Pantalla Super Retina XDR con ProMotion</li>
-        <li><i class="fa-solid fa-shield-halved"></i> Garantía incluida</li>
-      </ul>
-      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20el%20iPhone%2013%20Pro%20Max%20(%24650.000%20ARS).%20%C2%BFSigue%20disponible%3F" class="btn-buy">
-        <i class="fa-brands fa-whatsapp"></i> Comprar ahora
-      </a>
-    </div>
-  </div>
-
   <!-- Combo Rocker Completo -->
   <div class="product-card animate-on-scroll">
     <div class="carousel" data-carousel="combo">
@@ -1186,7 +1533,7 @@ footer {
         <li><i class="fa-solid fa-plug"></i> Cargador 20W + Cable</li>
         <li><i class="fa-solid fa-tag"></i> Ahorro combinado</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Rocker%20Completo%20(AirPods%20Pro%202%20%2B%20Cargador%2020W%20%2B%20Cable)%20a%20%2454.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Rocker%20Completo%20(AirPods%20Pro%202%20%2B%20Cargador%2020W%20%2B%20Cable)%20a%20%2454.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i> Pedir combo
       </a>
     </div>
@@ -1215,7 +1562,7 @@ footer {
         <li><i class="fa-solid fa-bluetooth"></i> Bluetooth 5.0/5.3 estable</li>
         <li><i class="fa-solid fa-clock"></i> 4–6 hs de uso + carga extra con case</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20los%20AirPods%20Pro%202%20Premium%20a%20%2429.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20los%20AirPods%20Pro%202%20Premium%20a%20%2429.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i> Lo quiero
       </a>
     </div>
@@ -1250,7 +1597,7 @@ footer {
         <li><i class="fa-solid fa-shield-halved"></i> Seguro y duradero</li>
         <li><i class="fa-solid fa-mobile-screen-button"></i> Compatible con iPhone</li>
       </ul>
-      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%2020W%20%2B%20Cable%20USB-C%20a%20%2428.900%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
+      <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%2020W%20%2B%20Cable%20USB-C%20a%20%2428.900%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i> Comprar
       </a>
     </div>
@@ -1288,7 +1635,7 @@ footer {
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
           <li><i class="fa-solid fa-box"></i> Compacto y fácil de transportar</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%20Apple%20Original%2020W%20USB-C%20a%20%2459.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cargador%20Apple%20Original%2020W%20USB-C%20a%20%2459.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp"></i> Quiero este cargador
         </a>
       </div>
@@ -1311,7 +1658,7 @@ footer {
           <li><i class="fa-solid fa-truck-fast"></i> Stock disponible en Buenos Aires</li>
           <li><i class="fa-solid fa-comments"></i> Consultanos por WhatsApp para más info</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Vi%20un%20accesorio%20Apple%20en%20su%20sitio%20y%20quiero%20saber%20el%20precio%20y%20disponibilidad." class="btn-consult">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Vi%20un%20accesorio%20Apple%20en%20su%20sitio%20y%20quiero%20saber%20el%20precio%20y%20disponibilidad." class="btn-consult" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp"></i> Consultar precio
         </a>
       </div>
@@ -1336,7 +1683,7 @@ footer {
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
           <li><i class="fa-solid fa-arrows-left-right"></i> Disponible en Lightning o USB-C</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cable%20Apple%20Original%20(Lightning%20o%20USB-C)%20a%20%2449.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Cable%20Apple%20Original%20(Lightning%20o%20USB-C)%20a%20%2449.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp"></i> Quiero este cable
         </a>
       </div>
@@ -1363,7 +1710,7 @@ footer {
           <li><i class="fa-solid fa-dumbbell"></i> Cable resistente y duradero</li>
           <li><i class="fa-solid fa-mobile-screen"></i> Compatible con iPhone y AirPods</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Apple%20Original%20(Cabezal%2020W%20%2B%20Cable)%20a%20%2499.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size:1rem;">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20el%20Combo%20Apple%20Original%20(Cabezal%2020W%20%2B%20Cable)%20a%20%2499.990%20ARS.%20%C2%BFTienen%20stock%3F" class="btn-buy" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size:1rem;">
           <i class="fa-brands fa-whatsapp"></i> Quiero el combo completo
         </a>
       </div>
@@ -1380,21 +1727,7 @@ footer {
     <p class="section-sub">USA 🇺🇸 · China 🇨🇳 · España 🇪🇸 — envío aéreo o marítimo a toda Argentina.</p>
   </div>
   <div class="encargos-grid">
-    <!-- iPhone 17 -->
-    <div class="encargo-card animate-on-scroll">
-      <div class="encargo-media">
-        <img src="https://i.ibb.co/twYtMvd8/img-6769.webp" alt="iPhone 17">
-      </div>
-      <div class="encargo-body">
-        <div class="encargo-label"><i class="fa-solid fa-tag"></i> Bajo encargo · Preventa</div>
-        <div class="encargo-title">iPhone 17</div>
-        <p class="encargo-text">Anticipate al futuro. Traemos las últimas novedades de Apple directo desde USA. Precio a confirmar según modelo y configuración.</p>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Me%20interesa%20encargar%20un%20iPhone%2017%20desde%20USA.%20%C2%BFPueden%20darme%20info%20sobre%20modelos%20y%20precios%3F" class="btn-consult">
-          <i class="fa-brands fa-whatsapp"></i> Consultar preventa
-        </a>
-      </div>
-    </div>
-    <!-- Servicio de importación -->
+    <!-- Servicio de importación general -->
     <div class="encargo-card animate-on-scroll">
       <div class="encargo-media">
         <video autoplay loop muted playsinline style="background:#000;">
@@ -1411,7 +1744,7 @@ footer {
           <li><span class="step-num">3</span> Lo traemos por aire o mar a Argentina</li>
           <li><span class="step-num">4</span> Te lo entregamos sin trámites extras</li>
         </ul>
-        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20cotizar%20una%20importaci%C3%B3n%20desde%20el%20exterior.%20%C2%BFMe%20pueden%20asesorar%3F" class="btn-consult">
+        <a href="https://wa.me/5491121720103?text=Hola%20Jonatan!%20Quiero%20cotizar%20una%20importaci%C3%B3n%20desde%20el%20exterior.%20%C2%BFMe%20pueden%20asesorar%3F" class="btn-consult" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp"></i> Cotizar importación
         </a>
       </div>
@@ -1586,8 +1919,8 @@ footer {
   <div class="footer-brand">RockPhone Argentina</div>
   <p class="footer-text">Importaciones directas de tecnología · Buenos Aires</p>
   <div class="footer-links">
-    <a href="https://wa.me/5491121720103"><i class="fa-brands fa-whatsapp"></i> +54 9 11 2172-0103</a>
-    <a href="https://wa.me/5491121720103"><i class="fa-solid fa-envelope"></i> Escribinos</a>
+    <a href="https://wa.me/5491121720103" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> +54 9 11 2172-0103</a>
+    <a href="https://wa.me/5491121720103" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> Escribinos</a>
   </div>
   <p class="footer-copy">© 2026 RockPhone Argentina. Todos los derechos reservados.</p>
 </footer>
@@ -1613,7 +1946,7 @@ footer {
       <button class="chat-btn" onclick="ans('¿Los accesorios Apple son originales?', '¡100% originales! Cargadores 20W, cables Lightning y USB-C, y combos completos. Todo con caja original Apple.')">🍎 ¿Son originales?</button>
       <button class="chat-btn" onclick="ans('¿Cómo encargo algo del exterior?', 'Fácil: me pasás el link o describís el producto, te cotizo el envío (aéreo o marítimo), y lo traemos directo a Argentina. Sin trámites de tu parte.')">✈️ ¿Cómo encargo del exterior?</button>
       <button class="chat-btn" onclick="ans('¿Cuánto tarda el envío?', 'Stock local: entregamos en 24-48hs en GBA. Importaciones desde USA: 7-15 días aéreo, 30-45 días marítimo.')">🚚 ¿Cuánto tarda el envío?</button>
-      <button class="chat-btn chat-btn-wa" onclick="window.open('https://wa.me/5491121720103')">
+      <button class="chat-btn chat-btn-wa" onclick="window.open('https://wa.me/5491121720103','_blank')">
         <i class="fa-brands fa-whatsapp"></i> Hablar con Jonatan por WA
       </button>
     </div>
@@ -1712,7 +2045,7 @@ footer {
 
   // Initialize
   document.addEventListener('DOMContentLoaded', () => {
-    ['iphone13', 'combo', 'airpods', 'cargador'].forEach(initCarousel);
+    ['iphone17', 'iphone13u', 'combo', 'airpods', 'cargador'].forEach(initCarousel);
     handleScrollAnimations();
     window.addEventListener('scroll', handleScrollAnimations);
   });
